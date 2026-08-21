@@ -1,33 +1,18 @@
 import streamlit as st
 import pandas as pd
 
-from sklearn.preprocessing import OneHotEncoder
-from sklearn.compose import ColumnTransformer
-from sklearn.pipeline import Pipeline
-from sklearn.linear_model import LogisticRegression
-
-
-# --------------------------------------------------
+from sklearn import *
 # TITLE
-# --------------------------------------------------
-
 st.title("PREDICTION APP")
 
 st.info("APP WHICH USES ML MODELS FOR PREDICTION")
 
-
-# --------------------------------------------------
 # LOAD DATA
-# --------------------------------------------------
-
 df = pd.read_csv(
     "https://raw.githubusercontent.com/dataprofessor/data/refs/heads/master/penguins_cleaned.csv"
 )
 
-
-# --------------------------------------------------
 # DATA
-# --------------------------------------------------
 
 with st.expander("Data"):
 
@@ -42,11 +27,7 @@ with st.expander("Data"):
     y = df["species"]
     st.dataframe(y)
 
-
-# --------------------------------------------------
 # DATA VISUALISATION
-# --------------------------------------------------
-
 with st.expander("Data Visualisation"):
 
     st.scatter_chart(
@@ -56,11 +37,7 @@ with st.expander("Data Visualisation"):
         color="species"
     )
 
-
-# --------------------------------------------------
 # SIDEBAR
-# --------------------------------------------------
-
 with st.sidebar:
 
     st.header("Input Features")
@@ -119,10 +96,7 @@ data = {
 
 input_df = pd.DataFrame(data)
 
-
-# --------------------------------------------------
 # DISPLAY INPUT
-# --------------------------------------------------
 
 with st.expander("Input Features"):
 
@@ -167,10 +141,7 @@ preprocessor = ColumnTransformer(
     ]
 )
 
-
-# --------------------------------------------------
 # MODEL
-# --------------------------------------------------
 
 model = Pipeline(
     steps=[
@@ -182,27 +153,17 @@ model = Pipeline(
     ]
 )
 
-
-# --------------------------------------------------
 # TRAIN MODEL
-# --------------------------------------------------
 
 model.fit(x, y)
 
-
-# --------------------------------------------------
 # PREDICTION
-# --------------------------------------------------
 
 prediction = model.predict(input_df)
 
 probability = model.predict_proba(input_df)
 
-
-# --------------------------------------------------
 # RESULT
-# --------------------------------------------------
-
 st.subheader("Prediction")
 
 st.success(
@@ -210,9 +171,7 @@ st.success(
 )
 
 
-# --------------------------------------------------
 # PROBABILITY
-# --------------------------------------------------
 
 st.subheader("Prediction Probability")
 
