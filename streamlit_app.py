@@ -82,10 +82,7 @@ with st.sidebar:
         4207.0
     )
 
-
-# --------------------------------------------------
 # INPUT DATAFRAME
-# --------------------------------------------------
 
 data = {
     "island": [island],
@@ -106,11 +103,7 @@ with st.expander("Input Features"):
 
     st.dataframe(input_df)
 
-
-# --------------------------------------------------
 # FEATURES
-# --------------------------------------------------
-
 categorical_features = [
     "island",
     "sex"
@@ -123,10 +116,7 @@ numerical_features = [
     "body_mass_g"
 ]
 
-
-# --------------------------------------------------
 # PREPROCESSING
-# --------------------------------------------------
 
 preprocessor = ColumnTransformer(
     transformers=[
