@@ -13,7 +13,7 @@ with st.expander('Data'):
   x = df.drop('species',axis=1)
   x
 
-  st.write('**y**)
+  st.write('**y**')
   y = df.species
   y
 
