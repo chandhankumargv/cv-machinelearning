@@ -11,9 +11,9 @@ from sklearn.linear_model import LogisticRegression
 # TITLE
 # --------------------------------------------------
 
-st.title("MACHINE LEARNING APP")
+st.title("PREDICTION APP")
 
-st.info("THIS IS A MACHINE LEARNING APP THAT BUILDS ML MODELS")
+st.info("APP WHICH USES ML MODELS FOR PREDICTION")
 
 
 # --------------------------------------------------
