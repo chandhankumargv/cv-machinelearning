@@ -37,7 +37,7 @@ with st.sidebar:
           'body_mass_g':body_mass_g,
           'gender':gender}
   input_df = pd.DataFrame(dataindex = [0])
-  input_penguins  = pd.concat([input_df,x],axis = 0))
+  input_penguins  = pd.concat([input_df,x],axis = 0)
 with  st.expander('Input feautures'):
   st.write('**Input penguins**')
   input_df
