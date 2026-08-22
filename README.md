@@ -1,6 +1,6 @@
 # 📦 PREDICTION APP
 
-THIS IS AN MACHINE LEARNING APP
+THIS IS AN PREDICTION APP
 ## Demo App
 
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://cv-machinelearning.streamlit.app/)
